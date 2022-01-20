@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Run my Docker
-        uses: actions/docker_test_action
+        uses: sfc-gh-zhowe/docker_test_action
         id: docker
         with:
           command-line: 'This is my command line'
