@@ -19,6 +19,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
+      - name: fix permissions
+        run: chcon -Rt svirt_sandbox_file_t /home/runner/work/docker_test_code/docker_test_code
+        
       - name: Run my Docker
         uses: sfc-gh-zhowe/docker_test_action@main
         id: docker
