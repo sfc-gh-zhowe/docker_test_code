@@ -17,12 +17,12 @@ jobs:
     container:
       image: ghcr.io/snowflakedb/ske/ubuntu-sc:latest
       env:
-        SF_ACCOUNT: account
-        SF_USERNAME: user
-        SF_ROLE: role
-        SF_WAREHOUSE: wh
-        SF_DATABASE: db
-        SNOWFLAKE_PASSWORD: pass
+        SF_ACCOUNT: ${{ secrets.sf_account }}
+        SF_USERNAME: ${{ secrets.sf_username }}
+        SF_ROLE: ${{ secrets.sf_role }}
+        SF_WAREHOUSE: ${{ secrets.sf_warehouse }}
+        SF_DATABASE: ${{ secrets.sf_database }}
+        SNOWFLAKE_PASSWORD: ${{ secrets.sf_password }}
       volumes:
         - /home/runner/work/docker_test_code/docker_test_code/schemachange_delta:/github/workspace/schemachange_delta
       credentials:
