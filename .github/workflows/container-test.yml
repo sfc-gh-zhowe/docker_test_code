@@ -23,6 +23,7 @@ jobs:
         SF_WAREHOUSE: ${{ secrets.sf_warehouse }}
         SF_DATABASE: ${{ secrets.sf_database }}
         SNOWFLAKE_PASSWORD: ${{ secrets.sf_password }}
+        ENV: DEV
 #      volumes:
 #        - /home/runner/work/docker_test_code/docker_test_code/schemachange_delta:/github/workspace/schemachange_delta
       credentials:
