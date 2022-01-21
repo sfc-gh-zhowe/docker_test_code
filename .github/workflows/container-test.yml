@@ -1,4 +1,4 @@
-name: Containter
+name: Container
 
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -12,7 +12,7 @@ jobs:
       image: ghcr.io/snowflakedb/ske/ubuntu-sc:latest
       credentials:
         username: ${{ github.actor }}
-        password: ${{ secrets.ghcr_token }}
+        password: abc
     steps:
       - name: Run in container
         run: |
