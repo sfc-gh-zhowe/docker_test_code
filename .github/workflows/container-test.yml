@@ -6,11 +6,11 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  check-it-out:
-    runs-on: ubuntu-latest
-    steps:
-        - name: Checkout
-          uses: actions/checkout@v2
+#  check-it-out:
+#    runs-on: ubuntu-latest
+#    steps:
+#        - name: Checkout
+#          uses: actions/checkout@v2
           
   my-container-job:
     runs-on: ubuntu-latest
@@ -29,6 +29,9 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.ghcr_token }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Run in container
         run: |
           echo Running Schemachange Container
