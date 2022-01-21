@@ -1,1 +1,1 @@
-select current_date();
+select '{{ENV}}',  current_date();
