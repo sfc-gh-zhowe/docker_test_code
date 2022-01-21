@@ -6,6 +6,12 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  check-it-out:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+          
   my-container-job:
     runs-on: ubuntu-latest
     container:
@@ -18,7 +24,7 @@ jobs:
         SF_WAREHOUSE: wh
         SF_DATABASE: db
       volumes:
-        - /:/github/workspace
+        - ${{ github.github_workspace }}:/github/workspace
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.ghcr_token }}
