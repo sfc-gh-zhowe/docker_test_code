@@ -23,7 +23,7 @@ jobs:
         SF_WAREHOUSE: wh
         SF_DATABASE: db
       volumes:
-        - ${{ github.github_workspace }}:/github/workspace
+        - /home/runner/work/docker_test_code/docker_test_code:/github/workspace
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.ghcr_token }}
