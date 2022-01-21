@@ -10,13 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/snowflakedb/ske/ubuntu-sc:latest
+      env:
+        GITHUB_WORKSPACE: /github_workspace
+        SF_ACCOUNT: account
+        SF_USERNAME: user
+        SF_ROLE: role
+        SF_WAREHOUSE: wh
+        SF_DATABASE: db
+      volumes:
+        - /:/github/workspace
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.ghcr_token }}
     steps:
       - name: Run in container
         run: |
-          echo This job does specify a container.
-          echo It runs in the container instead of the VM.
+          echo Running Schemachange Container
           /schemachange.sh
           
