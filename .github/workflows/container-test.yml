@@ -17,7 +17,6 @@ jobs:
     container:
       image: ghcr.io/snowflakedb/ske/ubuntu-sc:latest
       env:
-        GITHUB_WORKSPACE: /github_workspace
         SF_ACCOUNT: account
         SF_USERNAME: user
         SF_ROLE: role
